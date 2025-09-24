@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -33,10 +35,6 @@
     "tailwindcss": "^4",
     "typescript": "^5"
   },
-    "homepage": "https://github.com/ziyazetdinoff/defectscan.github.io",
-    "scripts": {
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build"
-  }
+  "homepage": "https://ziyazetdinoff.github.io/defectscan.github.io"
 }
 
