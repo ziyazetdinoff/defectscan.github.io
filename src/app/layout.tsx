@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { withBasePath } from "@/lib/basePath";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "AI-powered magnetic scanning and defect classification. 99% defect detection accuracy in seconds.",
   icons: {
-    icon: "/favicon.ico",
+    icon: withBasePath("/favicon.ico"),
   },
 };
 

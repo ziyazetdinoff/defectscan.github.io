@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   basePath: base,
   assetPrefix: `${base}/`,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: base,
+  },
   images: {
     unoptimized: true,
     remotePatterns: [
