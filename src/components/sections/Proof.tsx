@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { withBasePath } from "@/lib/basePath";
+import gazpromImg from "@/../public/gazprom-review.jpeg";
 import { useInView } from "react-intersection-observer";
 import { Check } from "lucide-react";
 
@@ -26,7 +26,7 @@ export default function Proof() {
           <p className="mt-3 text-lg">We received interest for deployment from PJSC &quot;Gazprom Automation&quot;.</p>
           </div>
           <div className="rounded-lg overflow-hidden border border-border bg-black/20 p-2 flex items-center justify-center max-h-[420px]">
-            <Image src={withBasePath("/gazprom-review.jpeg")} alt="Letter of interest from Gazprom Automation" width={996} height={1064} className="w-full h-auto object-contain" />
+            <Image src={gazpromImg} alt="Letter of interest from Gazprom Automation" width={996} height={1064} className="w-full h-auto object-contain" />
           </div>
         </div>
         <div ref={ref} className="mt-8" />

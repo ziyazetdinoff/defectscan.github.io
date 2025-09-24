@@ -3,6 +3,7 @@ import Image from "next/image";
 import DeviceImage from "@/components/DeviceImage";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef, useState } from "react";
+import heroBg from "@/../public/hero-bg.jpg";
 import { withBasePath } from "@/lib/basePath";
 
 export default function Hero() {
@@ -10,7 +11,7 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0px", "-120px"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.6]);
-  const [bgSrc, setBgSrc] = useState(withBasePath("/hero-bg.jpg"));
+  const [bgSrc, setBgSrc] = useState(withBasePath(heroBg.src));
 
   return (
     <section id="hero" ref={ref} className="relative section">
