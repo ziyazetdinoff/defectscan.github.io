@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:gh": "cross-env NEXT_TARGET=ghpages next build",
     "start": "next start",
     "lint": "eslint",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:gh",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
@@ -33,8 +34,8 @@
     "eslint-config-next": "15.5.4",
     "gh-pages": "^6.3.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
-  },
-  "homepage": "https://ziyazetdinoff.github.io/defectscan.github.io"
+    "typescript": "^5",
+    "cross-env": "^7.0.3"
+  }
 }
 
