@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '/defectscan.github.io';
+
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/defectscan.github.io',
-  assetPrefix: '/defectscan.github.io/',
+  basePath: base,
+  assetPrefix: `${base}/`,
   images: {
     unoptimized: true,
     remotePatterns: [
