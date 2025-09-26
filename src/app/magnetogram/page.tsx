@@ -31,14 +31,16 @@ export default function MagnetogramPage() {
     setImageUrl(null);
 
     try {
-      // Простая оффлайн-логика: если имя файла строго равно "dataset1.txt",
-      // показываем статичное изображение магнитограммы
-      const isMatch = file.name.trim().toLowerCase() === "dataset1.txt";
-      if (isMatch) {
-        const staticImage = withBasePath("/magnetogram.jpeg");
-        setImageUrl(staticImage);
+      // Простая оффлайн-логика выбора картинки по имени файла
+      const name = file.name.trim().toLowerCase();
+      let imagePath: string | null = null;
+      if (name === "dataset1.txt") imagePath = "/magnetogram1.jpeg";
+      if (name === "dataset2.txt") imagePath = "/magnetogram2.jpeg";
+
+      if (imagePath) {
+        setImageUrl(withBasePath(imagePath));
       } else {
-        setError("Ошибка при обработке файла");
+        setError("Файл не поддерживается. Используйте dataset1.txt или dataset2.txt");
       }
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Не удалось обработать файл";
