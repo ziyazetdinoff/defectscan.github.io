@@ -3,6 +3,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import Logo from "@/components/Logo";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -20,6 +21,7 @@ export default function Header() {
           <a href="#solution" className="hover:text-foreground">Solution</a>
           <a href="#how" className="hover:text-foreground">How it works</a>
           <a href="#roi" className="hover:text-foreground">ROI</a>
+          <a href={withBasePath("/magnetogram")} className="hover:text-foreground">Magnetogram</a>
           <a href="#contact" className="hover:text-foreground">Contact</a>
         </nav>
         <div className="flex items-center gap-3">
